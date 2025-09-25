@@ -1,0 +1,110 @@
+/* ! Liens utiles */
+/* ? Lien vers tuto en ligne "statique" */
+/* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+/* ? Lien vers tuto intéractif "dynamique" */
+/* https://www.joshwcomeau.com/css/interactive-guide-to-flexbox/ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100lvh;
+    /* 100vw : 100% de la view width */
+    /* 100vh : 100% de la view height */
+    /* lvh sera la view height la plus large (sur mobile par ex c'est utile pour ne pas redimensionner quand la barre url disparait au scroll */
+}
+
+.container1 {
+    width: 800px;
+    height: 300px;
+    background-color: lightgray;
+
+    /* ------------display flex--------------- */
+    /* activer le fait que le conteneur est flex */
+    display: flex;
+
+    /* ------------flex-direction----------------- */
+    /* Changer la direction du main axis (axe principal) */
+    flex-direction: row; /* Si flex-direction non précisée c'est cette valeur qui est par défaut */
+    flex-direction: row-reverse;
+    flex-direction: column;
+    flex-direction: column-reverse;
+    /* celui sur lequel on joue actuellement */
+    flex-direction: row;
+    
+    /* ----------justify-content (axe principal)---------- */
+    /* Met tous les éléments au début de l'axe principal */
+    justify-content: start; /* valeur par défaut*/
+    /* Met tous les éléments à la fin de l'axe principal */
+    justify-content: end;
+    /* Met tous les éléments au centre de l'axe principal */
+    justify-content: center;
+    /* Met le premier élément au début de l'axe principal, le dernier élément à la fin de l'axe principal et sépare tous les éléments avec le même espacement  */
+    justify-content: space-between;
+    /* Met le même espace AUTOUR de chaque élément */
+    justify-content: space-around;
+    /* Met le même espace ENTRE chaque élément */
+    justify-content: space-evenly;
+
+    justify-content: center;
+
+    /* ----------align-items (axe secondaire)---------- */
+    /* Si les éléments n'ont pas de taille définie et qu'ils sont étirables, va étirer l'élément pour qu'il remplisse l'axe secondaire  */
+    align-items: stretch; /* valeur par défaut */
+    /* Met au début de l'axe secondaire */
+    align-items: start;
+    /* Met à la fin de l'axe secondaire */
+    align-items: end;
+    /* Met au centre de l'axe secondaire */
+    align-items: center;
+    /* Aligne les éléments par rapport à leur balise (ligne de base du texte) */
+    align-items: baseline;
+
+    align-items: center; 
+
+    /* ------- Choisir l'espacement entre les éléments ------ */
+    gap : 2rem;
+
+    /* Les notions plus avancées : */
+    flex-wrap: wrap; /*permet le passage à la ligne si les éléments débordent */
+
+    /* Comment les lignes/colonnes générées par le wrap vont se comporter*/
+    /* la totalité au début de l'axe secondaire */
+    align-content: start;
+    /* la totalité à la fin de l'axe secondaire */
+    align-content: end;
+    /* la totalité au milieu de l'axe secondaire */
+    align-content: center;
+    /* vous connaissez (voir justify-content) */
+    align-content: space-between;
+    align-content: space-around;
+    align-content: space-evenly;
+
+    /* note : le gap fonctionne aussi pour l'espacement entre vos lignes/colonnes */
+    align-content: center;
+}
+
+.elem {
+    background-color: darkseagreen;
+    padding: 0.5rem;
+    width: fit-content; /* pour préciser que la largeur doit fit le contenu (padding inclus) */
+    width: 150px;
+    flex-shrink: 0; /*pour indiquer qu'un élément n'est pas rétrécissable */
+    height: fit-content;
+    border : 2px solid darkblue;
+       
+}
+
+.elem:nth-child(2) {
+    /* font-size: 1.5rem; */
+    /* Si wrap pas activé, vous pouvez préciser une autre règle pour l'alignement sur l'axe secondaire pour des éléments particuliers */
+    /* align-self: stretch; */ 
+    order: 1;
+}
+

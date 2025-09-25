@@ -1,0 +1,81 @@
+/* Pour que les bordures se fondent entre elles */
+table {
+    border-collapse: collapse;
+    /* border-spacing: 0; */
+}
+
+/* Mettre une bordure à toutes les cases et un padding de 1rem de chaque côté des cases */
+td, th {
+    border : 1px solid black;
+    padding: 1rem;
+}
+
+/* --------------THEAD----------------- */
+/* Enlever la bordure de la première th (case tout en haut à gauche) */
+th:first-of-type {
+    border: none;
+}
+
+/* Mettre toutes les th sauf la première en vert foncé */
+th:not(:first-of-type) {
+    background-color: seagreen;
+    color : rgb(224, 238, 224);
+}
+/* l'autre solution était de selectionner toutes les th pour appliquer la couleur PUIS de selectionner juste la première pour mettre un bg transparent */
+
+/* --------------TBODY---------------- */
+/* Mettre les lignes paires en vert */
+tbody tr:nth-of-type(even){
+    background-color: darkseagreen;
+}
+
+/* Mettre la police plus grosse dans toutes les première td de chaque ligne */
+tbody tr td:first-of-type {
+    font-size: 1.5rem;
+}
+
+/* Pour chaque ligne paire, mettre la première td en vert foncé */
+tbody tr:nth-of-type(even) td:first-of-type {
+    background-color: seagreen;
+    color : rgb(224, 238, 224);
+}
+
+/* Pour chaque ligne impaire, mettre la première td en gris clair */
+tbody tr:nth-of-type(odd) td:first-of-type {
+    background-color: lightgray;
+}
+
+/* Mettre un effet de dégradé haché dans chaque td vide */
+tbody td:empty {
+   background: linear-gradient(45deg, #d3d3d3 12.5%, #fff 12.5%, #fff 37.5%, #d3d3d3 37.5%, #d3d3d3 62.5%, #fff 62.5%, #fff 87.5%, #d3d3d3 87.5%);
+}
+
+/* --------------- BONUS ----------------- */
+/* Retirer bouton si tel empty */
+/* Selectionne le premier bouton présent dans un td qui est voisin d'un 4ème td qui est empty */
+/* tbody td:nth-of-type(4):empty~td button:first-of-type{
+    display: none;
+} */
+
+/* Retirer le bouton si mail empty */
+/* Selectionne le dernier bouton présent dans un td qui est voisin d'un 5ème td qui est empty */
+/* tbody td:nth-of-type(5):empty~td button:last-of-type{
+    display: none;
+} */
+
+/* Vu qu'on veut mettre la même propriété pour les deux, on peut les combiner avec la , */
+/* tbody td:nth-of-type(4):empty~td button:first-of-type,
+tbody td:nth-of-type(5):empty~td button:last-of-type {
+    display: none;
+} */
+
+
+/* Le premier bouton se trouvant dans une tr qui contient une 4ème td qui est vide */ 
+/* ET */
+/* Le dernier bouton se trouvant dans une tr qui contient une 5ème td qui est vide */
+tbody tr:has(td:nth-of-type(4):empty) button:first-of-type,
+tbody tr:has(td:nth-of-type(5):empty) button:last-of-type{
+    display: none;
+}
+
+/* En js, on aurait du faire un algo qui parcourt toutes les lignes du tbody. Pour chacune des lignes, on aurait du regarder si la 4ème td n'a pas contenu auquel cas on aurait du répupérer la td voisine dans laquelle on aurait du selectionner le premier bouton pour modifier ses classes et lui appliquer une classe hidden */

@@ -1,0 +1,243 @@
+/* Petit apparté sur le resetCss */
+/* Les reset CSS sont des fichiers css rajoutés pour enlever tout le style de base prédéfini (on utilise aussi beaucoup Normalize) */
+/* Quand on utilisera un framework CSS comme bootstrap ou tailwind, on verra qu'ils ont eux même fait un resetCss */
+
+/* Perso, en html,css vanilla, je n'utilise que mon minimum syndical qui m'embête : */
+/* ? Pour tous les éléments */
+* {
+    margin: 0; /* j'enlève la marge autour */
+    padding: 0; /* j'enlève le padding intérieur */
+
+    /* box-sizing: content-box; */ /* content-box est la valeur par défaut, elle signifie que le calcul de la taille d'un élément additionnera la taille de l'élément + les bordures + le padding */
+    box-sizing: border-box; /* border-box indique que les bordures et le padding seront inclus dans la taille de l'élément */
+}
+
+header {
+    width: 100%;
+    background-color: rgb(237, 220, 217);
+}
+
+
+/* ----------------------------------------- */
+/* ! Les selecteurs */
+/* ----------------------------------------- */
+/* ! Les selecteurs de base */
+/* ----------------------------------------- */
+nomBalise {}
+
+/* ex : */
+
+q {
+    /* selectionne toutes les balises q */
+    display: block;
+    color : darkorange;
+}
+
+/* ---------- */
+.nomDeClasse {}
+
+/* ex :  */
+.text-blue {
+    color : blue;
+}
+
+#nomId {}
+
+/* ex : */
+#citation {
+    color : violet;
+}
+
+/* ----------------------------------------- */
+/* ! Les sélecteurs avancés */
+/* ----------------------------------------- */
+/* ? Par attribut */
+/* Selectionner un/les élément/s qui possède/nt l'attribut renseigné entre [] */
+input[placeholder] {
+    background-color: lightpink;
+}
+
+/* Sélectionner un/les élément/s qui possèdent l'attribut renseignée + la valeur renseignée pour cet attribut */
+input[type="number"]{
+    background-color: lightseagreen;
+}
+
+/* ? Selecteur descendant */
+/* ✅ Celui ci vous allez beaucoup l'utiliser */
+/* selecteur parent/enfant */
+/* Je selectionne les liens qui se trouvent dans un élément de type nav */
+nav a {
+    color : rgb(85, 133, 85);
+}
+
+nav ul a {
+    /* spécifiquement les liens de la liste */
+}
+
+/* ? Selecteur d'enfant direct */
+nav>a {
+    background-color: lightgoldenrodyellow;
+    /* Ne va selectionner que le lien Logo puisqu'il est enfant direct de la nav. Les autres liens ayant deux lignées de descendance entre les deux, ne seront pas ciblés */
+}
+
+/* ? Voisin direct -> Le voisin qui se trouve directement APRES sans le html */
+/* L'input qui se trouve juste après un label */
+label+input {
+   border : 3px solid orange;
+}
+
+/* ? Voisins */
+/* Tous les inputs qui se trouvent après un label (même lignée) */
+label~input {
+    outline: 3px solid blue;
+}
+
+/* ? Selecteur combinatoire (ET) */
+/* Pour appliquer du style à plusieurs éléments */
+#coucou, #hibou, input[type="number"]{
+    color : chartreuse;
+}
+
+/* ----------------------------------------- */
+/* ! Les pseudo classes */
+/* ----------------------------------------- */
+/* ? Pseudo-classe de page */
+:root {
+    /* En général on l'utilise pour déclarer nos variables (qu'on verra un peu plus tard) */
+}
+:target {
+    /* Permet de changer le style de l'élément sélectionné via l'ancre (pour par exemple faire ressortir) le titre */
+}
+
+/* ? Pseudo-classe d'évènement */
+/* Quand on va survoler les liens de la nav */
+nav a:hover {
+    color : tomato;
+}
+
+/* Le moment où vous êtes en train de cliquer */
+/* Détails minutieux pour par exemple faire l'animation d'un bouton au click pour avoir l'impression qu'on l'a vraiment "appuyé" */
+nav a:active {
+    color : violet;
+}
+
+/* Quand on utilise la tabulation et qu'on a le focus sur l'élément (nativement, on peut avoir le focus avec les a, button, les champs (input, textarea)) */
+nav a:focus {
+    font-size: 1.5rem;
+    background-color: black;
+    color : whitesmoke;
+}
+
+/* Permet de cibler les liens déjà visités */
+a:visited {
+    color : orange;
+}
+
+/* ? Pseudo-classe pour préciser un élément */
+#demo-select-type *{
+    /* Juste pour reset que tous les éléments n'aient pas de couleur dans cette div */
+    color : black; 
+}
+
+/* Selectionne le p s'il est premier enfant */
+#demo-select-type p:first-child {
+    color : red;
+}
+
+#demo-select-type a:first-child {
+    /* Ne va pas s'appliquer, le a n'est pas premier enfant */
+    color : yellowgreen;
+}
+
+/* Selectionne le premier élément de ce type parmi ses éléments de son type étant ses frères et soeurs */
+#demo-select-type a:first-of-type {
+    color : peru;
+}
+
+#demo-select-type p:last-child {
+    /* Ne va rien cibler puisque le dernier enfant de #demo-select-type est un a */
+    color : magenta;
+}
+
+#demo-select-type p:last-of-type {
+    /* Va selectionner dans #demo-select-type le dernier parmi tous les p */
+    color : lawngreen;
+}
+
+/* selectionne la balise nav dans le header si elle n'a pas de frère et soeur */
+header nav:only-child {
+    background-color: lightyellow;
+}
+
+/* selectionne la balise q seulement s'il n'y a pas d'autres balise du même type parmi ses frères et soeurs */
+#demo-select-type q:only-of-type {
+    background-color: blanchedalmond; 
+}
+
+/* Les nth qui font peur mais en fait ça va vous inquiétez pas */
+#hobbies {
+    margin-left: 2rem;
+}
+
+/* Cibler tous les élements impairs parmi les éléments du type précisé */
+#hobbies li:nth-of-type(odd){
+    color : lightsalmon;
+}
+
+/* Cibler tous les élements pairs parmi les éléments du type précisé */
+#hobbies li:nth-of-type(even){
+    background-color: lightgreen;
+}
+
+/* Xn+Y */
+/* X -> Tous les combien vous répétez */
+/* Y -> à partir de là où vous souhaitez commencer */
+#hobbies li:nth-of-type(3n+1){
+    border : 2px solid blue;
+}
+/* fera pareil mais en partant du dernier  */
+/* #hobbies li:nth-last-of-type(3n+1){
+    border : 2px solid red;
+} */
+
+/* Peut aussi être utilisé avec juste un chiffre pour selectionner un élément en particulier parmi ses frères et soeurs */
+#hobbies li:nth-of-type(5){
+    outline: 2px solid yellow;
+}
+
+/* not  */
+#demo-not input {
+    background-color: inherit;
+}
+/* Selectionne tous les inputs qui ne sont pas de type text */
+/* #demo-not input:not(input[type="text"]){
+    background-color: brown;
+} */
+
+/* si le not concerne quelque chose en rapport avec l'élément (input), pas obligé de renoter l'élément */
+#demo-not input:not([type="text"]){
+    background-color: brown;
+}
+
+/* les input qui ne sont pas focus */
+#demo-not input:not(:focus){}
+/* les paragraphe qui ne possèdent pas la classe blue */
+#demo-not p:not(.blue){}
+
+/* has  */
+#demo-has input {
+    border: 1px solid gray;
+    outline: none;
+}
+
+#demo-has label+input {
+    /* permet uniquement de cibler l'input qui se trouve être voisin d'un label (à droite) */
+}
+
+/* Si je veux selectionner le label qui possède un input comme voisin direct (à droite) */
+#demo-has label:has(+input) {
+    background-color: red;
+}
+
+
+

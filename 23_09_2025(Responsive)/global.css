@@ -1,0 +1,140 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-light : #f4f9f7;
+    --color-medium : #63a088;
+    --color-dark : #263b34;
+
+    /* Cible la préférence du navigateur */
+    @media (prefers-color-scheme: dark) {
+        --color-light : #263b34;
+        --color-medium : #63a088;
+        --color-dark : #f4f9f7;
+    }
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color : var(--color-dark);
+}
+
+header {
+    background-color: var(--color-medium);
+    /* flex-grow: 1; */
+
+    padding: 2rem 0;
+    text-align: center;
+
+    /* spoil des media queries */
+    @media (max-width : 640px) {
+        background-color: tomato;
+    }
+}
+
+main {
+    background-color: var(--color-light);
+    flex-grow: 1;
+
+    display: flex;
+    justify-content: center;
+
+    .trainers {
+        width: 80%;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width : 910px) {
+            width: 90%;
+            flex-wrap: wrap;
+            gap : 2rem;
+            padding: 2rem 0;
+        }
+
+        /* Comment .trainers va se comporter de 0 à 640px -> Mobile */
+        @media (max-width : 640px){
+            width: 90%;
+            flex-direction: column;
+            gap : 2rem;
+            padding: 2rem 0;
+        }
+
+        .trainer {
+            width: 30%;
+            /* aspect-ratio : largeur/hauteur */
+            aspect-ratio: 3/4 ;
+            border-radius: 1.5rem;
+            border: 2px solid var(--color-medium);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap : 1rem;
+
+            @media (max-width : 910px) {
+                width: 40%;
+                
+            }
+
+            @media (max-width : 640px){
+                width: 70%;
+                aspect-ratio: 4/3;
+            }
+
+            img {
+                width: 50%;
+                aspect-ratio: 1/1;
+            }
+
+            picture {
+              width: 50%; 
+              aspect-ratio: 1/1;
+              img {
+                height: 100%;
+                width: 100%;
+              }
+            }
+        }
+    }
+}
+
+footer {
+    background-color: var(--color-medium);
+    padding: 1rem 0;
+    text-align: center;
+    /* flex-grow: 1; */
+
+    @media (orientation: landscape) {
+        background-color: tomato;
+    }
+    @media (orientation: portrait) {
+        background-color: turquoise;
+    }
+}
+
+/* flex-grow : Définit si votre élément est agrandissable et si oui, combien de fois
+-> Par défaut à 0 -> Pas grandissable
+-> flex-grow de 2 = 2 fois plus agrandissable qu'un élément qui a flex-grow 1 */
+
+/* flex-shrink : Définit si votre élément est rétrécissable et si oui, combien de fois
+-> Par défaut à 1 -> Tous les éléments sont rétrécissables
+-> flex-shrink de 2 = 2 fois plus rétrécissable qu'un élément qui flex-shrink de 1 */
+
+/* Si pas de css nesting, on met tout le css responsive à un seul endroit en général */
+/* Attention du coup, il faut que vos selecteurs soient les même que sans media query sinon, ceux sans media seront prioritaires */
+@media (max-width : 640px) {
+    header {
+
+    }
+
+    .trainers {
+
+    }
+}

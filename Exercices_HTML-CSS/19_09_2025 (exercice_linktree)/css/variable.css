@@ -1,0 +1,15 @@
+:root {
+  /* Les couleurs */
+  --primary-color: white;
+  --secondary-color: #634113;
+
+  /* Les largeurs*/
+  --widthFull: 100%;
+  --width90: 90%;
+  --width80: 80%;
+  --width60: 60%;
+
+  /* Les hauteurs */
+  --heightVlh: 100vh;
+  --heightFull: 100%;
+}

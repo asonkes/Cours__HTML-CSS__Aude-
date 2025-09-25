@@ -1,0 +1,230 @@
+/* Petit apparté sur le resterCSS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    background-color: tomato;
+    margin-bottom: 40px;
+}
+
+/* ----------------------------------------- */
+/* Utilisé en Sass aussi - A RETENIR */
+/* ----------------------------------------- */
+
+/* ----------------------------------------- */
+/* Les sélecteurs avancés */
+/* ----------------------------------------- */
+
+/* Par attribut */
+/* Là on sélectionne ceux qui ont un "placeholder */
+input[placeholder] {
+    background-color: lightpink;
+}
+
+/* Ici on sélectionne ceux qui ont un attribut de type "number" */
+/* Bien mettre [type = number ] */
+input[type=number] {
+    background-color: lightseagreen;
+}
+
+/* ----------------------------------------- */
+/* Sélecteur combinateurs */
+/* Sélecteur de l'enfant direct */
+/* ----------------------------------------- */
+
+/* Ici le nav est le parent et "a" l'enfant direct, pas possible pour les "a" du nav car il y a entre "ul" et "li" */
+nav>a {
+    background-color: aqua;
+}
+
+/* Voisin direct */
+/* Pour le voisin qui se trouve directement après */
+label+input {
+    border: 12px solid red;
+}
+
+
+/* Voisins */ 
+label~input {
+    /* Quand on clique sur l'input se voit ==> pas beaucoup faire attention */ 
+    outline: 25px solid blue;
+}
+
+
+/* Sélecteur combinatoire (ET) */ 
+/* Permet d'appliquer à plusieurs éléments */
+#coucou, #hibou, input[type=number] {
+    color: chartreuse;
+}
+
+/* ----------------------------------------- */
+/* Les pseudo classes */
+/* ----------------------------------------- */
+
+/* Utiliser en général pour déclarer les variables (on reviendra dessus */
+:root {}
+
+
+/* Permet de changer le style de l'élément sélectionné via l'ancre (pour faire ressortir le titre) */ 
+:target {}
+
+/* ----------------------------------------- */
+/* Les pseudo classes d'évènement */
+/* ----------------------------------------- */
+/* Quand on va survoler les liens du "nav", on change la couleur du texte */
+nav a:hover {
+    color: white;
+}
+
+/* C'est quand on clique */
+nav a:active {
+    color: violet;
+}
+
+/* C'est quand on appuie sur tabulation */
+nav a:focus {
+    font-size: 1.5rem;
+    background-color: black;
+    color: white;
+}
+
+/* Quand des liens ont déjà été visité */
+a:visited {
+    color: orange;
+}
+
+/* -------------------------------------------------- */
+/* Les pseudo classes pour préciser les élements */
+/* -------------------------------------------------- */
+
+#demo-select-type {
+    margin-top: 80px;
+}
+
+/* Ici l'étoile "*" permet de sélectionner tous les éléments dans l'id*/
+#demo-select-type *{
+    color: black;
+}
+
+/* Sélectionne le 1er enfant de l'id déclaré */
+#demo-select-type p:first-child {
+    color: red;
+}
+
+/* Sélectionne le 1er élément (ou enfant parmis la liste) */
+/* Ici ne s'applique pas car il n'est pas le 1er élément */
+/* C'est la balise "p" qui est le 1er élément */
+#demo-select-type a:first-child {
+    color: yellowgreen;
+}
+
+/* Ici par contre va s'appliquer car 1er élément de la liste */
+#demo-select-type a:first-of-type {
+    color: peru;
+}
+
+/* Même raisonnement mais à l'envers */
+#demo-select-type p:last-child {
+    color: magenta;
+}
+
+#demo-select-type p:last-of-type {
+    color: lawngreen;
+}
+
+/* Car seul élément quote dans cette liste */
+/* Ne peut pas avoir d'autres éléments "q" dans cette liste */
+#demo-select-type q:only-of-type {
+    background-color: blanchedalmond;
+}
+
+/* Elle sélectionne la balise nav dans le header si elle n'a pas de frère et soeur */
+header nav:only-child {
+    background-color: lightyellow;
+}
+
+/* ----------------------------------------------------------------------------------- */
+/* Les pseudo classes pour préciser les élements avec :nth ou last ou first et Xn+Y*/
+/* ----------------------------------------------------------------------------------- */
+#hobbies{
+    margin-top: 80px;
+}
+
+/* Cibler tous les éléments impairs parmi les éléments du type précisé dans une liste */
+/* odd ==> 3lettres ==> impairs */
+#hobbies li:nth-of-type(odd) {
+    color: lightsalmon;
+}
+
+/* even ==> 4lettres ==> pairs */
+#hobbies li:nth-of-type(even) {
+    background-color: chartreuse;
+}
+
+/* Xn+Y */
+/* X */
+/* Y */
+/* Avant qu'il y ai last ou first on faisait cela */
+/* Ici +1 ==> impairs */
+/* Ici, 1, car on commence au 1er élément */
+/* Si on met 3, on commence du 2eme élément pair */
+#hobbies li:nth-of-type(2n+1) {
+    border: 2px solid blue;
+}
+
+/* Ici pairs */
+#hobbies li:nth-of-type(2n+2) {
+    border: 4px solid red;
+}
+
+/* Celui est rare à utiliser */
+/* Ici cela permet de cibler dans la liste un élément précis */
+#hobbies li:nth-of-type(5) {
+    outline: 6px solid yellow;
+}
+
+/* Meme principe par la suite avec "last" mais là, on part du dernier élément de la liste */
+
+/* ----------------- */
+/* HAS ET NOTE */
+/* ----------------- */
+#demo-not {
+    margin-top: 80px;
+}
+
+/* not */
+/* Donc cela a prit tous les input sauf ceux qui ne sont pas de type "text" */
+/* pas obligé de mettre input 
+input[type=text] , on peut mettre [type=text]
+*/
+#demo-not input:not(input[type=text]) {
+    background-color: red;
+}
+
+/* Je veux tous les input sauf ceux qui ne sont pas de type FOCUS */
+#demo-not input:not(:focus) {}
+
+/* Je ne veux pas tous les paragraphes qui ont la classe "blue" */
+#demo-not p:not(.blue) {}
+
+/* has */
+#demo-has input {
+    margin-top: 80px;
+    outline: none;
+    border: 1px solid gray;
+}
+
+/* Permet uniquement de cibler l'input qui se trouve être voisin d'un label (à droite) */
+#demo-has label+input {
+    background-color: green;
+}
+
+/* Si je veux sélectionner le label qui possède un input comme voisin direct (à droite) */
+#demo-has label:has(+input) {
+    background-color: red;
+}

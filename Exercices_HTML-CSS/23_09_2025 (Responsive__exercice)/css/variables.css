@@ -1,0 +1,18 @@
+:root {
+    /* Les couleurs */
+    --primary-color: white;
+    --secondary-color: fuchsia;
+    --tertiary-color: black;
+
+    /* Les fonts */
+    --primary-font: "Bitcount Grid Single Ink", system-ui;
+    --secondary-font: "Exo", sans-serif;
+
+    /* Les Largeurs */
+    --widthFull: 100%;
+    --width90: 90%;
+
+    /* Les hauteurs */
+    --heightVh: 100vh;
+    --heightFull: 100%;
+}
