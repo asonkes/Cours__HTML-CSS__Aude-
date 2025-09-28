@@ -39,12 +39,11 @@ const footer = document.querySelector("footer");
 
 sun.addEventListener("click", (event) => {
     event.preventDefault();
-
-    /** l'icone soleil disparait en mode sombre */
-    sun.classList.add("active");
+    event.stopPropagation();
 
     /** l'icone soleil disparait en mode sombre */
     moon.classList.add("active");
+    sun.classList.add("active");
 
     /** Pour le header */
     header.classList.toggle("light");
@@ -65,5 +64,13 @@ sun.addEventListener("click", (event) => {
     cardText.forEach(element => {
         element.classList.toggle("light");
     })
-    
+})
+
+moon.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    /** l'icone soleil disparait en mode sombre */
+    moon.classList.remove("active");
+    sun.classList.remove("active");
 })
