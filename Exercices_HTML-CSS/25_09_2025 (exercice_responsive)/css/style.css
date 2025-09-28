@@ -1,0 +1,28 @@
+/* Lien vers les variables */
+@import url("./variables.css");
+
+/* Liens vers le header et le footer */
+@import url("./partials/header.css");
+@import url("./partials/footer.css");
+
+/* Lien vers la css Home */
+@import url("./pages/home.css");
+
+/* Lien vers la css Artistes */
+@import url("./pages/artistes.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: var(--widthFull);
+  min-height: var(--heightVh);
+  background-color: var(--tertiary-color);
+}
+
+.container {
+  max-width: var(--width90);
+}

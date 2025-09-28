@@ -1,0 +1,36 @@
+:root {
+  /* Les couleurs */
+  --primary-color: white;
+  --secondary-color: fuchsia;
+  --tertiary-color: black;
+
+  /* Les fonts */
+  --primary-font: "Bitcount Grid Single Ink", system-ui;
+  --secondary-font: "Exo", sans-serif;
+
+  /* Les tailles des fonts */
+
+  /* Les paddging */
+  --padding1: 1rem;
+
+  /* Les Largeurs */
+  --width0: 0%;
+  --width30: 30%;
+  --width40: 40%;
+  --width45: 45%;
+  --width50: 50%;
+  --width58: 58%;
+  --width75: 75%;
+  --width90: 90%;
+  --widthFull: 100%;
+
+  /* Les hauteurs */
+  --height0: 0%;
+  --height58: 58%;
+  --heightFull: 100%;
+  --heightVh: 100vh;
+
+  /* Opacité */
+  --opacity0: 0;
+  --opacity1: 1;
+}

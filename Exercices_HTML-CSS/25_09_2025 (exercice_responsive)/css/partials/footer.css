@@ -1,0 +1,17 @@
+footer {
+  max-width: var(--widthFull);
+  background-color: var(--tertiary-color);
+  padding: var(--padding1);
+  color: var(--primary-color);
+  text-align: center;
+
+  &.light {
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+  }
+
+  @media (prefers-color-scheme: light) {
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+  }
+}
