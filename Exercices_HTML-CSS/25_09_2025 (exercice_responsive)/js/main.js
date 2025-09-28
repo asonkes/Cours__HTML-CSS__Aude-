@@ -39,38 +39,56 @@ const footer = document.querySelector("footer");
 
 sun.addEventListener("click", (event) => {
     event.preventDefault();
-    event.stopPropagation();
 
     /** l'icone soleil disparait en mode sombre */
     moon.classList.add("active");
     sun.classList.add("active");
 
     /** Pour le header */
-    header.classList.toggle("light");
-    headerMenu.classList.toggle("light");
+    header.classList.add("light");
+    headerMenu.classList.add("light");
 
     /** Pour le footer */
-    footer.classList.toggle("light");
+    footer.classList.add("light");
 
     /** Pour la page artiste */
     cardItems.forEach(element => {
-        element.classList.toggle("light");
+        element.classList.add("light");
     })
 
     cardImage.forEach(element => {
-        element.classList.toggle("light");
+        element.classList.add("light");
     })
 
     cardText.forEach(element => {
-        element.classList.toggle("light");
+        element.classList.add("light");
     })
 })
 
 moon.addEventListener("click", (event) => {
     event.preventDefault();
-    event.stopPropagation();
 
     /** l'icone soleil disparait en mode sombre */
     moon.classList.remove("active");
     sun.classList.remove("active");
+
+    /** Pour le header */
+    header.classList.remove("light");
+    headerMenu.classList.remove("light");
+
+    /** Pour le footer */
+    footer.classList.remove("light");
+
+    /** Pour la page artiste */
+    cardItems.forEach(element => {
+        element.classList.remove("light");
+    })
+
+    cardImage.forEach(element => {
+        element.classList.remove("light");
+    })
+
+    cardText.forEach(element => {
+        element.classList.remove("light");
+    })
 })
