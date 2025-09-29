@@ -9,9 +9,36 @@
   --secondary-font: "Exo", sans-serif;
 
   /* Les tailles des fonts */
+  --fontSize-xsmall: 0.875rem;
+  --fontSize-small: 0.938rem;
+  --fontSize-small-large: 1rem;
+  --fontSize-regular: 1.375rem;
+  --fontSize-medium: 1.563rempx;
+  --fontSize-large: 1.75rem;
+  --fontSize-xl: 1.875rem; 
+  --fontSize-xxl: 2.188rem; 
 
   /* Les paddging */
-  --padding1: 1rem;
+  --padding-xsmall: 0.313rem;
+  --padding-small: 0.625rem;
+  --padding-regular: 1rem;
+  --padding-medium: 1.25rem;
+  --padding-large: 2.5rem;
+  --padding-xl: 3.75rem;
+  --padding-xxl: 5.25;
+
+/*
+  5px
+  10px
+  16px
+  20px
+  40px
+  60px
+  84px
+
+
+
+  */
 
   /* Les Largeurs */
   --width0: 0%;

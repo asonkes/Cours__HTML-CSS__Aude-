@@ -1,7 +1,7 @@
 footer {
   max-width: var(--widthFull);
   background-color: var(--tertiary-color);
-  padding: var(--padding1);
+  padding: var(--padding-regular);
   color: var(--primary-color);
   text-align: center;
 

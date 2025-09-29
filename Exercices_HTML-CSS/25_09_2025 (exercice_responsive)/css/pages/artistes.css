@@ -9,7 +9,7 @@ main {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding-top: 84px;
+    padding-top: var(--padding-small);
     display: flex;
 
     @media (max-width: 1024px) {
@@ -23,7 +23,7 @@ main {
       flex-wrap: wrap;
       justify-content: center;
       gap: 2rem;
-      padding: 60px;
+      padding: var(--padding-xl);
 
       @media (max-width: 1024px) {
         width: var(--width90);
@@ -33,17 +33,17 @@ main {
 
       @media (max-width: 768px) {
         width: var(--width75);
-        padding: 20px;
+        padding: var(--padding-medium);
         gap: 2rem;
       }
 
       @media (max-width: 550px) {
         width: var(--widthFull);
-        font-size: 15px;
+        font-size: var(----fontSize-small);
       }
 
       @media (max-width: 450px) {
-        font-size: 14px;
+        font-size: var(--fontSize-xsmall);
       }
 
       .cardItems {
@@ -51,7 +51,7 @@ main {
         height: var(--heightFull);
         aspect-ratio: 1;
         border-radius: 50px;
-        padding: 20px;
+        padding: var(--padding-medium);
         border: 4px solid black;
 
         &.light {
@@ -72,7 +72,7 @@ main {
           justify-content: space-around;
           align-items: center;
           aspect-ratio: 16/9;
-          padding: 10px;
+          padding: var(--padding-small);
         }
 
         .vinyle {
@@ -89,6 +89,11 @@ main {
 
           @media (max-width: 768px) {
             width: var(--width50);
+          }
+
+          &:hover {
+            transform: rotate(-360deg);
+            transition: transform 1s ease-in-out;
           }
 
           .photo {
@@ -112,7 +117,7 @@ main {
         .text {
           width: var(--widthFull);
           font-family: var(--primary-font);
-          padding: 20px;
+          padding: var(--padding-medium);
           filter: invert(1) brightness(0);
           border-radius: 20px;
           margin-top: 20px;
@@ -130,7 +135,7 @@ main {
 
           @media (max-width: 768px) {
             width: var(--width40);
-            padding: 10px;
+            padding: var(--padding-small);
           }
         }
       }

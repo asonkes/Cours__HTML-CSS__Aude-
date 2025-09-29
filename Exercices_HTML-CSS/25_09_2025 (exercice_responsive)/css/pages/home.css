@@ -45,17 +45,17 @@ main {
         text-align: center;
         color: white;
         font-family: "Bitcount Grid Single Ink", system-ui;
-        font-size: 35px;
-        padding: 20px;
+        font-size: var(--fontSize-xxl);
+        padding: var(--padding-medium);
         filter: brightness(0) invert(1);
         border: 3px dotted white;
 
         @media (max-width: 1024px) {
-          font-size: 30px;
+          font-size: var(--fontSize-xl);
         }
 
         @media (max-width: 768px) {
-          font-size: 25px;
+          font-size: var(--fontSize-medium);
         }
       }
     }
@@ -90,7 +90,7 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 20px;
+        padding: var(--padding-medium);
         aspect-ratio: 3/4;
         box-shadow: rgba(255, 0, 255, 0.2) 0px 2px 8px 0px;
         border-radius: 20px;
@@ -102,13 +102,13 @@ main {
 
         p {
           font-family: var(--secondary-font);
-          font-size: 16px;
-          padding: 5px;
+          font-size: var(--fontSize-small-large);
+          padding: var(--padding-xsmall);
           color: var(--primary-color);
 
           @media (max-width: 1024px) {
             text-align: center;
-            font-size: 14px;
+            font-size: var(--fontSize-xsmall);
           }
         }
       }
@@ -137,7 +137,7 @@ main {
           max-width: var(--widthFull);
           width: var(--widthFull);
           max-height: 400px;
-          padding: 10px;
+          padding: var(--padding-small);
           object-fit: contain;
           display: flex;
 
