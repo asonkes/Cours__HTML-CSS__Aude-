@@ -1,5 +1,6 @@
 main {
   max-width: var(--widthFull);
+  padding-top: 84px;
 
   .block__intro {
     width: var(--widthFull);

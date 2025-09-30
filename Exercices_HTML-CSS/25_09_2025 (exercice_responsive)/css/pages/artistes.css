@@ -1,6 +1,8 @@
 /* CSS des artistes */
 main {
   max-width: var(--widthFull);
+  /* Erreur à ne plus refaire !!!!! */
+  padding-top: 84px;
 
   .cardParent {
     width: var(--widthFull);
@@ -144,6 +146,7 @@ main {
         @media (max-width: 768px) {
           order: 1;
         }
+        
       }
 
       #cardItems1 {
