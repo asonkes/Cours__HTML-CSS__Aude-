@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <form method="post" action="javascript:void(0)">
+
+            <div>
+                <label for="lastname"></label>
+                <input type="text" name="lastname" placeholder="Nom" id="lastname">
+            </div>
+
+            <div>
+                <label for="password"></label>
+                <input type="password" name="password" placeholder="Mot de passe" id="password">
+            </div>
+
+            <div>
+                <label for="tel"></label>
+                <input type="tel" name="tel" placeholder="Numéro de téléphone" id="phone">
+            </div>
+
+            <div>
+                <label for="file"></label>
+                <input type="file" name="file" placeholder="Parcourir" id="file" multiple accept="image/*">
+            </div>
+
+            <div>
+                <label for="conditions">Oui, je souhaite m'abonner à la newsletter</label>
+                <input type="checkbox" name="conditions" id="conditions">
+            </div>
+
+            <div>
+                <p>Quel est votre genre ?</p>
+
+                <label for="man">Homme</label>
+                <input type="radio" name="gender" id="man" value="h">
+
+                <label for="woman">Femme</label>
+                <input type="radio" name="gender" id="woman" value="f">
+
+                <label for="other">Autre</label>
+                <input type="radio" name="gender" id="other" value="0">
+
+            </div>
+
+            <div>
+                <label for="com"></label>
+                <textarea rows="3" cols="50" name="com" id="com"></textarea>
+            </div>
+
+            <div>
+                <label for="techno">Quelle techno préférez-vous ?</label>
+                <select name="techno" id="techno" value="t">
+                    <!-- Selected permet de faire en sorte que le 1er soit enregistrer par defaut -->
+                    <!-- selected = -->
+                    <!-- Hidden sert à cacher la phrase : Choississez une techno -->
+                    <option selected hidden value="">Choississez une techno</option>
+                    
+                    <!-- Liste commence -->
+                    <!-- Ici on peut aussi faire des sous-classes ce qui permet de les ranger -->
+                    <!-- C'est là que le "optionGroup"= "optGroup" commence -->
+                    <optgroup label="Front-End">
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="js">JS</option>
+                    </optgroup>
+
+                    <option value="nodeJS">Node JS</option>
+                    <option value="sql">SQL</option>
+                    <option value="figma">Figma</option>
+                </select>
+            </div>
+
+            <!-- Pour les input/style buttons -->
+            <input type="submit" value="Envoyer">
+            <input type="reset" value="Effacer"> <!-- Il efface tout -->
+            <input type="button" value="Faire un truc">
+
+            <!-- Pour les boutons -->
+            <button>Envoyer</button> <!-- Par défaut en type="submit" -->
+            <!--- Ok Audrey pour validation, garder les boutons, pas les input -->
+            <button type="reset">Effacer</button>
+            <button type="button">Faire un truc</button>
+
+            <!-- Les attributs -->
+            
+
+
+        </form>
+    </main>
+</body>
+</html>
