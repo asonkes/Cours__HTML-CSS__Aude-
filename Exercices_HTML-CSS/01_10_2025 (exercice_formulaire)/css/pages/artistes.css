@@ -1,0 +1,177 @@
+/* CSS des artistes */
+main {
+  max-width: var(--widthFull);
+  /* Erreur à ne plus refaire !!!!! */
+  padding-top: 84px;
+
+  .cardParent {
+    width: var(--widthFull);
+    min-height: var(--heightVh);
+    background-image: url("../../images/background/background3.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: var(--padding-small);
+    display: flex;
+
+    @media (max-width: 1024px) {
+      justify-content: center;
+    }
+
+    .card {
+      width: var(--widthFull);
+      height: var(--heightFull);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: var(--padding-xl);
+
+      @media (max-width: 1024px) {
+        width: var(--width90);
+        padding: 40px;
+        gap: 3rem;
+      }
+
+      @media (max-width: 768px) {
+        width: var(--width75);
+        padding: var(--padding-medium);
+        gap: 2rem;
+      }
+
+      @media (max-width: 550px) {
+        width: var(--widthFull);
+        font-size: var(----fontSize-small);
+      }
+
+      @media (max-width: 450px) {
+        font-size: var(--fontSize-xsmall);
+      }
+
+      .cardItems {
+        width: var(--width30);
+        height: var(--heightFull);
+        aspect-ratio: 1;
+        border-radius: 50px;
+        padding: var(--padding-medium);
+        border: 4px solid black;
+
+        &.light {
+          border: 4px solid white;
+        }
+
+        @media (prefers-color-scheme: light) {
+          border: 4px solid white;
+        }
+
+        @media (max-width: 1024px) {
+          width: var(--width45);
+        }
+
+        @media (max-width: 768px) {
+          width: var(--width90);
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          aspect-ratio: 16/9;
+          padding: var(--padding-small);
+        }
+
+        .vinyle {
+          width: var(--widthFull);
+          height: var(--heightFull);
+          background-image: url("../../images/vinyle/vinyle.png");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+
+          @media (max-width: 768px) {
+            width: var(--width50);
+          }
+
+          &:hover {
+            transform: rotate(-360deg);
+            transition: transform 1s ease-in-out;
+          }
+
+          .photo {
+            width: var(--width58);
+            height: var(--height58);
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+            border: 4px solid black;
+
+            &.light {
+              border: 4px solid white;
+            }
+
+            @media (prefers-color-scheme: light) {
+              border: 4px solid white;
+            }
+          }
+        }
+
+        .text {
+          width: var(--widthFull);
+          font-family: var(--primary-font);
+          padding: var(--padding-medium);
+          filter: invert(1) brightness(0);
+          border-radius: 20px;
+          margin-top: 20px;
+          border: 2px dotted black;
+
+          &.light {
+            filter: invert(0) brightness(4);
+            border: 2px dotted white;
+          }
+
+          @media (prefers-color-scheme: light) {
+            filter: invert(0) brightness(4);
+            border: 2px dotted white;
+          }
+
+          @media (max-width: 768px) {
+            width: var(--width40);
+            padding: var(--padding-small);
+          }
+        }
+      }
+
+      .cardItems:nth-child(even) .vinyle {
+        @media (max-width: 768px) {
+          order: 1;
+        }
+        
+      }
+
+      #cardItems1 {
+        background-color: #d0a602;
+      }
+
+      #cardItems2 {
+        background-color: #d82fa8;
+      }
+
+      #cardItems3 {
+        background-color: #0f88c8;
+      }
+
+      #cardItems4 {
+        background-color: #d02511;
+      }
+
+      #cardItems5 {
+        background-color: #75ad18;
+      }
+
+      #cardItems6 {
+        background-color: #5f51b1;
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+footer {
+  max-width: var(--widthFull);
+  background-color: var(--tertiary-color);
+  padding: var(--padding-regular);
+  color: var(--primary-color);
+  text-align: center;
+  border-top: 1px solid white;
+
+  &.light {
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    border-top: 1px solid black;
+  }
+
+  @media (prefers-color-scheme: light) {
+    background-color: var(--primary-color);
+    color: var(--tertiary-color);
+    border-top: 1px solid black;
+  }
+}

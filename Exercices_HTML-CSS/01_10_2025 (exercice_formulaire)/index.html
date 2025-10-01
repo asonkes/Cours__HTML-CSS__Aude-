@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single+Ink:wght@100..900&family=Exo:ital,wght@0,100..900;1,100..900&family=Merienda:wght@300..900&display=swap"
+      rel="stylesheet" />
+
+    <!-- Script pour fontawesome -->
+    <script src="https://kit.fontawesome.com/2cbf82340f.js" crossorigin="anonymous"></script>
+
+    <!-- Script pour JS -->
+    <script src="./js/main.js" defer></script>
+
+    <title>Accueil</title>
+  </head>
+  <body>
+    <header>
+      <div class="header__container">
+        <div class="header__logo">
+          <a href="./index.html">
+            <img src="./images/logo/notes-musique-enseigne-au-neon-couleurs-lgbt.png" alt="" />
+          </a>
+        </div>
+        <div class="header__menu">
+          <nav>
+            <ul>
+              <li><a href="./index.html">Accueil</a></li>
+              <li><a href="./artistes.html">Artistes</a></li>
+              <li><a href="./contact.html">Contact</a></li>
+              <li>
+                <a class="sun" href="./index.html"><i class="fa-solid fa-sun"></i></i></a>
+                <a class="moon" href="./index.html"><i class="fa-solid fa-moon"></i></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header__burger">
+          <div class="header__burger--menu">
+            <i class="fa-solid fa-bars icone"></i>
+          </div>
+          <div class="header__burger--cross">
+            <i class="fa-solid fa-xmark icone"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="block__intro">
+        <picture class="picture">
+          <source srcset="./images/background/background__intro--small.jpg" media="(max-width : 768px)" />
+
+          <source srcset="./images/background/background__intro--medium.jpg" media="(max-width : 1024px)" />
+
+          <img src="./images/background/background__intro--large.jpg" alt="Image de fond d'écran" />
+        </picture>
+
+        <div class="block__intro--text">
+          <p class="block1__text">
+            `La bonne musique ne se trompe pas, et va droit au fond de l'âme chercher le chagrin qui nous dévore.`
+          </p>
+        </div>
+      </div>
+
+      <div class="block__description">
+        <div class="container blockParent">
+          <div class="block__description--text">
+            <p>
+              Etant passionnée de musique depuis que je suis toute petite et oui, j'écoutais et dansais avec ma
+              grand-mère sur du Michel Sardou.
+            </p>
+            <p>Fan des chansons des chansons de Bodyguard et de Dirty Dancing.</p>
+            <p>Récemment, j'ai découvert plusieurs artistes que je ne connaisssais pas.</p>
+            <p>Les paroles de ces chansons sont tellement touchantes que l'on ne peut ne pas s'identifier.</p>
+            <p>Nick Mallen, Tibz, Jérémy Frérot, Louane et Julien Lieb.</p>
+            <p>Chansons françaises, OUI, mais des pépites que je ne me lasse pas d'écouter.</p>
+          </div>
+          <div class="block__description--img">
+            <img
+              src="./images/personnage page d'accueil/fille-musicale-illustration-du-disque-vinyle.png"
+              alt="Image d'une fille qui écoute de la musique" />
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>@Copyright Sonkes Audrey - Exercice 2025</footer>
+  </body>
+</html>

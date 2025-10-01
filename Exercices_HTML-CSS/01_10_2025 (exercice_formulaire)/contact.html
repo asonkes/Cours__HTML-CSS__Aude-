@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single+Ink:wght@100..900&family=Exo:ital,wght@0,100..900;1,100..900&family=Merienda:wght@300..900&display=swap"
+      rel="stylesheet" />
+
+    <!-- Script pour fontawesome -->
+    <script src="https://kit.fontawesome.com/2cbf82340f.js" crossorigin="anonymous"></script>
+
+    <!-- Script pour JS -->
+    <script src="./js/main.js" defer></script>
+
+    <title>Accueil</title>
+  </head>
+  <body>
+    <header>
+      <div class="header__container">
+        <div class="header__logo">
+          <a href="./index.html">
+            <img src="./images/logo/notes-musique-enseigne-au-neon-couleurs-lgbt.png" alt="" />
+          </a>
+        </div>
+        <div class="header__menu">
+          <nav>
+            <ul>
+              <li><a href="./index.html">Accueil</a></li>
+              <li><a href="./artistes.html">Artistes</a></li>
+              <li><a href="./contact.html">Contact</a></li>
+              <li>
+                <a class="sun" href="./contact.html"><i class="fa-solid fa-sun"></i></i></a>
+                <a class="moon" href="./contact.html"><i class="fa-solid fa-moon"></i></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header__burger">
+          <div class="header__burger--menu">
+            <i class="fa-solid fa-bars icone"></i>
+          </div>
+          <div class="header__burger--cross">
+            <i class="fa-solid fa-xmark icone"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+        <h1> Contactez-nous! Un avis sur un chanteur, VOTEZ!</h1>
+        <form action="">
+            <div class="block__infosParent">
+                <div class="block__infos">
+                    <div class="border">
+                        <label for="name">Votre nom:</label>
+                        <input type="text" placeholder="Veuillez insérer votre nom" id="name" required>
+                    </div>
+                </div>
+
+                <fieldset class="block__infos--radio">
+                    <legend>A quel genre appartenez-vous?</legend>
+                    <div class="radio">
+                        <input type="radio" name="sexe" id="woman" value="woman">
+                        <label for="woman">Femme</label>
+                    </div>
+
+                    <div class="radio">
+                        <input type="radio" name="sexe" id="men" value="men">
+                        <label for="men">Homme</label>
+                    </div>
+
+                    <div class="radio">
+                        <input type="radio" name="sexe" id="other" value="other">
+                        <label for="other">Autre</label>
+                    </div>
+                </fieldset>
+
+                <div class="block__infos">
+                    <div class="border">
+                        <label for="email">Votre e-mail:</label>
+                        <input type="email" placeholder="Veuillez insérer votre prénom" id="email" required>
+                    </div>
+                </div>
+
+                <div class="block__infos">
+                    <div class="border">
+                        <label for="tel">Votre téléphone:</label>
+                        <input type="tel" placeholder="Veuillez insérer votre téléphone" id="tel">
+                    </div>
+                </div>
+
+                <div class="block__infos--select">
+                    <label for="singer-select">Quel chanteur préférez-vous?</label>
+                    <div class="selectParent">
+                        <select name="singer" id="singer__select">
+                            <option value="">Veuillez choisir le chanteur que vous préférez :</option>
+                            <option value="jeremy__frerot">Jérémy Frérot</option>
+                            <option value="nicky__mallen">Nicky Mallen</option>
+                            <option value="jeck">Jeck</option>
+                            <option value="julien__lieb">Julien Lieb</option>
+                            <option value="mkl">MKL</option>
+                            <option value="louane">Louane</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="block__infos">
+                    <div class="border">
+                        <label for="password">Mot de passe:</label>
+                        <input type="text" placeholder="Veuillez insérer votre mot de passe" id="password" required>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="textarea">
+                <label for="message">Votre message :</label>
+                <textarea name="message" id="message"></textarea>
+            </div>
+        </form>
+
+        <div class="button">
+            <button>Envoyer</button>
+        </div>
+    </main>
+    
+    <footer>@Copyright Sonkes Audrey - Exercice 2025</footer>
+  </body>
+</html>
