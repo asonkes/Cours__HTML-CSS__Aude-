@@ -242,7 +242,6 @@ main {
       button {
         width: 200px;
         padding: 15px;
-        color: white;
         background-color: black;
         border: 2px dotted fuchsia;
         font-family: var(--primary-font);
