@@ -53,12 +53,13 @@
 
     <main>
         <h1> Contactez-nous! Un avis sur un chanteur, VOTEZ!</h1>
-        <form action="">
+        <!-- novalidate ===> désactive la validation native -->
+        <form action="" method="post" id="form" novalidate>
             <div class="block__infosParent">
                 <div class="block__infos">
-                    <div class="border">
-                        <label for="name">Votre nom:</label>
-                        <input type="text" placeholder="Veuillez insérer votre nom" id="name" required>
+                    <div class="border" id ="error1">
+                        <label for="lastname">Votre nom:</label>
+                        <input type="text" placeholder="Veuillez insérer votre nom" id="lastname" required autocomplete="off">
                     </div>
                 </div>
 
@@ -83,9 +84,9 @@
                 </div>
 
                 <div class="block__infos">
-                    <div class="border">
+                    <div class="border" id="error2">
                         <label for="email">Votre e-mail:</label>
-                        <input type="email" placeholder="Veuillez insérer votre prénom" id="email" required>
+                        <input type="email" placeholder="Veuillez insérer votre prénom" id="email" required autocomplete="off">
                     </div>
                 </div>
 
@@ -117,41 +118,42 @@
                 </div>
                
                 <div class="block__infos">
-                    <div class="border">
+                    <div class="border" id="error3">
                         <label for="password">Mot de passe:</label>
-                        <input type="password" placeholder="Veuillez insérer votre mot de passe" id="password" required>
+                        <input type="password" placeholder="Veuillez insérer votre mot de passe" id="password" required autocomplete="off">
                     </div>
                 </div>
 
-                   <div class="block__infos">
-                    <fieldset class="block__infos--checkbox">
-                      <legend>Checkbox</legend>
-                      <div class="checkbox">
-                          <input type="checkbox" name="sexe" id="woman" value="woman">
-                          <label for="woman"></label>
-                      </div>
+                <div class="block__infos">
+                  <fieldset class="block__infos--checkbox">
+                    <legend>Quelques questions en + :</legend>
+                    <div class="checkbox">
+                        <input type="checkbox" name="question" id="loveArtistes" value="loveArtistes">
+                        <label for="loveArtistes">Aimez-vous les artistes sur ce site?</label>
+                    </div>
 
-                      <div class="checkbox">
-                          <input type="checkbox" name="sexe" id="men" value="men">
-                          <label for="men"></label>
-                      </div>
+                    <div class="checkbox">
+                        <input type="checkbox" name="question" id="designSite" value="designSite">
+                        <label for="designSite">Aimez-vous le design du site ?</label>
+                    </div>
 
-                      <div class="checkbox">
-                          <input type="checkbox" name="sexe" id="other" value="other">
-                          <label for="other"></label>
-                      </div>
-                  </fieldset>
-                </div>
+                    <div class="checkbox">
+                        <input type="checkbox" name="question" id="newArtistes" value="newArtistes">
+                        <label for="newArtistes">Reviendrez-vous pour voir les nouveaux artistes ?</label>
+                    </div>
+                </fieldset>
+              </div>
             </div>
     
-            <div class="textarea">
+            <div class="textarea" id="error4">
                 <label for="message">Votre message :</label>
-                <textarea name="message" rows="15" cols="33" id="message"></textarea>
+                <textarea name="message" rows="15" cols="33" id="message" maxlength="255" spellcheck></textarea>
             </div>
         </form>
 
         <div class="button">
-            <button>Envoyer</button>
+          <!-- bouton en dehors du formulaire, donc on met l'attribut "form" pour dire à quel formulaire il et lié -->
+            <button type="submit" form="form">Envoyer</button>
         </div>
     </main>
     

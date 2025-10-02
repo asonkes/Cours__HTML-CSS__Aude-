@@ -115,7 +115,7 @@ const liDataValue = document.querySelectorAll(".selectParent ul li");
 // Sert pour intégrer la valeur de ce que l'on va sélectionner dans le faux "select"
 const inputValue = document.getElementById("hiddenInput");
 // Ici, on prend l'input sur lequel la valeur du texte est mis
-const selectTitle = document.querySelector(".selectParent__title span");
+const selectTitle = document.querySelector(".selectParent__title .title");
 
 select.addEventListener("click", () => {
     ul.classList.toggle("active");
@@ -138,4 +138,74 @@ liDataValue.forEach(element => {
     // Maintenant on va incorporer la valeur que l'on a récolté pour qu'elle soit envoyée
     inputValue.value = element.getAttribute("data-value");
     })
+})
+
+/********************************/
+/** Ici le button du formulaire */
+/********************************/
+/** On initialise les variables dont on a besoin */
+const form = document.getElementById("form");
+
+const lastnameParent = document.getElementById("error1");
+const lastname = document.getElementById("lastname");
+
+const emailParent = document.getElementById("error2");
+const email = document.getElementById("email");
+
+const passwordParent = document.getElementById("error3");
+const password = document.getElementById("password");
+
+const textareaParent = document.getElementById("error4");
+const textarea = document.getElementById("message");
+// Ici on créé le span avant 
+// et en fonction du fait que l'on remplisse ou pas les caractères
+// Le message apparait ou disparait
+const newElement = document.createElement("span");
+newElement.classList.add("textareaError");
+textareaParent.appendChild(newElement);
+
+textarea.addEventListener("input", () => {
+    let textareaValue = textarea.value.length; 
+    
+    if(textareaValue >= 255) {
+        newElement.textContent = `* Le nombre de caractère est limité à 255`;
+    } else {
+        newElement.textContent = '';
+    }
+})
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if(lastname.value === "") {
+        isValid = false;
+        
+        const newElement = document.createElement("span");
+        newElement.classList.add("errorSpan");
+        newElement.textContent = `* Veuillez compléter le champ vide svp !`
+        lastnameParent.appendChild(newElement);
+    }
+
+    if(email.value === "") {
+        isValid = false;
+        
+        const newElement = document.createElement("span");
+        newElement.classList.add("errorSpan");
+        newElement.textContent = `* Veuillez compléter le champ vide svp !`
+        emailParent.appendChild(newElement);
+    }
+
+    if(password.value === "") {
+        isValid = false;
+        
+        const newElement = document.createElement("span");
+        newElement.classList.add("errorSpan");
+        newElement.textContent = `* Veuillez compléter le champ vide svp !`
+        passwordParent.appendChild(newElement);
+    }
+
+    // Si tout est valide, on peut envoyer les données)
+    if (isValid) {
+    form.submit();
+    }
 })
