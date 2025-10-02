@@ -66,12 +66,11 @@ main {
       border: 4px solid fuchsia;
 
       .block__infos--radio {
-        width: 80%;
+        width: 95%;
         display: flex;
         justify-content: space-between;
         padding: 8px;
         margin: 10px 0;
-        border: 1px solid red;
 
         legend {
           padding: 0 5px;
@@ -88,7 +87,63 @@ main {
 
         .selectParent {
           max-width: 100%;
-          border: 4px solid red;
+          margin: 10px;
+
+          .selectParent__title {
+            width: 100%;
+            position: relative;
+            display: inline-flex;
+            justify-content: space-between;
+            padding: 5px 10px;
+            cursor: pointer;
+            border: 2px solid white;
+
+            .iconDown {
+              height: 100%;
+              opacity: 1;
+
+              &.active {
+                height: 0;
+                opacity: 0;
+              }
+            }
+
+            .iconUp {
+              position: absolute;
+              height: 0;
+              top: 0;
+              right: 10px;
+              display: flex;
+              align-items: center;
+              opacity: 0;
+
+              &.active {
+                height: 100%;
+                opacity: 1;
+              }
+            }
+          }
+
+          ul {
+            height: 0;
+            opacity: 0;
+            list-style: none;
+
+            &.active {
+              height: 100%;
+              opacity: 1;
+            }
+
+            li {
+              border: 1px dotted fuchsia;
+              padding: 5px 10px;
+
+              &:hover {
+                background-color: rgba(255, 0, 255, 0.3);
+              }
+            }
+          }
+
 
         }
       }
@@ -145,10 +200,8 @@ main {
 
         .radio {
           width: fit-content;
-          border: 4px solid orange;
         }
       }
-      
     }
 
     .textarea {
@@ -169,12 +222,34 @@ main {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding: 20px 0;
+        filter: invert(0) brightness(4);
+        color: white;
       }
 
       textarea {
+
         resize: none;
       }
     }
+
+    .button {
+      max-width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 50px;
+
+      button {
+        width: 200px;
+        padding: 15px;
+        color: white;
+        background-color: black;
+        border: 2px dotted fuchsia;
+        font-family: var(--primary-font);
+        font-size: 20px;
+        color: white;
+        filter: invert(0) brightness(4);
+      }
+    }
   }
-}
 

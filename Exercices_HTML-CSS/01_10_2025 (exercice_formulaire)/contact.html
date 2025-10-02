@@ -62,23 +62,25 @@
                     </div>
                 </div>
 
-                <fieldset class="block__infos--radio">
-                    <legend>A quel genre appartenez-vous?</legend>
-                    <div class="radio">
-                        <input type="radio" name="sexe" id="woman" value="woman">
-                        <label for="woman">Femme</label>
-                    </div>
+                <div class="block__infos">
+                    <fieldset class="block__infos--radio">
+                      <legend>A quel genre appartenez-vous?</legend>
+                      <div class="radio">
+                          <input type="radio" name="sexe" id="woman" value="woman">
+                          <label for="woman">Femme</label>
+                      </div>
 
-                    <div class="radio">
-                        <input type="radio" name="sexe" id="men" value="men">
-                        <label for="men">Homme</label>
-                    </div>
+                      <div class="radio">
+                          <input type="radio" name="sexe" id="men" value="men">
+                          <label for="men">Homme</label>
+                      </div>
 
-                    <div class="radio">
-                        <input type="radio" name="sexe" id="other" value="other">
-                        <label for="other">Autre</label>
-                    </div>
-                </fieldset>
+                      <div class="radio">
+                          <input type="radio" name="sexe" id="other" value="other">
+                          <label for="other">Autre</label>
+                      </div>
+                  </fieldset>
+                </div>
 
                 <div class="block__infos">
                     <div class="border">
@@ -95,31 +97,56 @@
                 </div>
 
                 <div class="block__infos--select">
-                    <label for="singer-select">Quel chanteur préférez-vous?</label>
-                    <div class="selectParent">
-                        <select name="singer" id="singer__select">
-                            <option value="">Veuillez choisir le chanteur que vous préférez :</option>
-                            <option value="jeremy__frerot">Jérémy Frérot</option>
-                            <option value="nicky__mallen">Nicky Mallen</option>
-                            <option value="jeck">Jeck</option>
-                            <option value="julien__lieb">Julien Lieb</option>
-                            <option value="mkl">MKL</option>
-                            <option value="louane">Louane</option>
-                        </select>
+                  <div class="selectParent">
+                    <!-- Ici il faut un input pour pouvoir stocker la valeur de ce que l'on va séléectionner -->
+                    <input type="hidden" value="" id="hiddenInput">
+                    <div class="selectParent__title">
+                      <span class="title">Quel chanteur préférez-vous ?</span>
+                      <span class="iconDown"><i class="fa-solid fa-chevron-down"></i></span>
+                      <span class="iconUp"><i class="fa-solid fa-chevron-up"></i></span>
                     </div>
+                    <ul>
+                      <li data-value="jeremy_frerot">Jérémy Frérot</li>
+                      <li data-value="nick_mallen">Nick Mallen</li>
+                      <li data-value="jeck">Jeck</li>
+                      <li data-value="julien_lieb">Julien Lieb</li>
+                      <li data-value="mkl">MKL</li>
+                      <li data-value="louane">Louane</li>
+                    </ul>
+                  </div>
                 </div>
-
+               
                 <div class="block__infos">
                     <div class="border">
                         <label for="password">Mot de passe:</label>
-                        <input type="text" placeholder="Veuillez insérer votre mot de passe" id="password" required>
+                        <input type="password" placeholder="Veuillez insérer votre mot de passe" id="password" required>
                     </div>
+                </div>
+
+                   <div class="block__infos">
+                    <fieldset class="block__infos--checkbox">
+                      <legend>Checkbox</legend>
+                      <div class="checkbox">
+                          <input type="checkbox" name="sexe" id="woman" value="woman">
+                          <label for="woman"></label>
+                      </div>
+
+                      <div class="checkbox">
+                          <input type="checkbox" name="sexe" id="men" value="men">
+                          <label for="men"></label>
+                      </div>
+
+                      <div class="checkbox">
+                          <input type="checkbox" name="sexe" id="other" value="other">
+                          <label for="other"></label>
+                      </div>
+                  </fieldset>
                 </div>
             </div>
     
             <div class="textarea">
                 <label for="message">Votre message :</label>
-                <textarea name="message" id="message"></textarea>
+                <textarea name="message" rows="15" cols="33" id="message"></textarea>
             </div>
         </form>
 

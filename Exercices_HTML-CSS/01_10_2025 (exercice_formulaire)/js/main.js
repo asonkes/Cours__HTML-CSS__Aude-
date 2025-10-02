@@ -3,7 +3,6 @@ const menu = document.querySelector(".header__menu");
 const burger = document.querySelector(".header__burger--menu");
 const cross = document.querySelector(".header__burger--cross");
 
-
 burger.addEventListener("click", (event) => {
     event.stopPropagation();
 
@@ -18,23 +17,28 @@ document.addEventListener("click", () => {
     cross.classList.remove("active");
 })
 
+/***********************************************/
 /* Ici on fait avec le bouton js le mode clair */
+/***********************************************/
 const sun = document.querySelector(".sun");
 const moon = document.querySelector(".moon");
 
-/* Ici on fait en sorte d'ajouter des classes actives */
-
-
+/*******************/
 /** Pour le header */
+/*******************/
 const header = document.querySelector("header");
 const headerMenu = document.querySelector(".header__menu");
 
+/**************************/
 /** Pour la page artistes */
+/**************************/
 const cardItems = document.querySelectorAll(".cardItems");
 const cardImage = document.querySelectorAll(".photo");
 const cardText = document.querySelectorAll(".text");
  
+/*******************/
 /** Pour le footer */
+/*******************/
 const footer = document.querySelector("footer");
 
 sun.addEventListener("click", (event) => {
@@ -90,5 +94,48 @@ moon.addEventListener("click", (event) => {
 
     cardText.forEach(element => {
         element.classList.remove("light");
+    })
+})
+
+/**********************************************/
+/** Ici pour designer la select du formulaire */
+/**********************************************/
+/** On initialise les variables dont on a besoin */
+
+// On prend le parent général pour faire l'évènement au click
+const select = document.querySelector(".selectParent");
+// On sélectionne la liste pour la rendre visible ou pas
+const ul = document.querySelector(".selectParent ul");
+// Sélectionne la flèche vers le bas
+const iconDown = document.querySelector(".iconDown");
+// Sélectionne la flèche vers le bas
+const iconUp = document.querySelector(".iconUp");
+// Et ici, il faut sélectionner tous les "li" de la liste
+const liDataValue = document.querySelectorAll(".selectParent ul li");
+// Sert pour intégrer la valeur de ce que l'on va sélectionner dans le faux "select"
+const inputValue = document.getElementById("hiddenInput");
+// Ici, on prend l'input sur lequel la valeur du texte est mis
+const selectTitle = document.querySelector(".selectParent__title span");
+
+select.addEventListener("click", () => {
+    ul.classList.toggle("active");
+    iconDown.classList.toggle("active");
+    iconUp.classList.toggle("active");
+})
+
+// Donc on sélectionne toutes les "li"
+liDataValue.forEach(element => {
+
+    // On fait un évènement au click sur les "li"
+    element.addEventListener("click", () => {
+    
+    // Ici on sélectionne la "div" du titre pour pouvoir changer le titre
+    // que qd on clique par exemple sur "jeck", c'est ça qui s'affiche
+    // et c'est grâce à "element", car ce sont les "elements" qu'on a sélectionné au début
+    // Que l'on insère dans le "p" où il y a le titre.
+    selectTitle.textContent = element.textContent;
+
+    // Maintenant on va incorporer la valeur que l'on a récolté pour qu'elle soit envoyée
+    inputValue.value = element.getAttribute("data-value");
     })
 })
