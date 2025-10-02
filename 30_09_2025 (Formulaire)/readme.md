@@ -46,7 +46,7 @@
    d) disabled :
    ==> le champ est complètement désactivé, on peut plus intéragir avec l'input etc
    f) autocomplete:
-   ==> pemrettre de faire en sorte que la personne qui met met sur son ordi toujours la même adresse mail, elle se mettre directement à la place
+   ==> permettre de faire en sorte que la personne qui met met sur son ordi toujours la même adresse mail, elle se mettre directement à la place
    g) maxlength :
    Nombre de caractères maximum que l'on peut mettre
    h) step :
