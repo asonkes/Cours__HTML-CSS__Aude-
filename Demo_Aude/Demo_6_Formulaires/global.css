@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1.5rem 0;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* FORMULAIRES */
+form {
+    width: 30%;
+    aspect-ratio: 3/4 ;
+    background-color: whitesmoke;
+}
+
+input[type=number]:out-of-range {
+    border: 2px solid red;
+}
+
+input:invalid, select:invalid, textarea:invalid {
+    border : 3px solid red;
+}
+
+input:valid, select:valid, textarea:valid {
+    border : 3px solid green;
+}
+
+form>div {
+    display: flex;
+    flex-direction: column;
+    gap : 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* le label qui possède comme voisin un input qui est requis */
+label:has(~input:required)::after {
+    content : "*" / "requis" ;
+    color : red;
+    margin-left: 0.25rem;
+}
+
+button {
+    background-color: violet;
+    color : darkblue;
+
+    &:hover {
+
+    }
+
+    &:active {
+
+    }
+
+    &:disabled {
+        background-color: grey;
+        color : lightgray;
+    }
+}
+
+.demo-label-flottant {
+    width: 80%;
+    margin: auto;
+    margin-top: 1rem;
+    padding: 2rem 0;
+
+    position: relative;
+
+    label {
+        position: absolute;
+        top : 2.3rem;
+        left: 0.5rem;
+
+        transition: all 300ms linear;
+    }
+
+    /* quand mon label à un input proche qui est soit focus, soit qui n'a pas son placeholder affiché (donc l'input est rempli) */
+    label:has(~input:focus, ~input:not(:placeholder-shown) ) {
+        /* On le bouge vers le haut */
+        transform: translateY(-1.8rem);
+        color : darkseagreen;
+    }
+
+    input {
+        height: 2rem;
+        border: 1px solid gray;
+        border-radius: 0.5rem;
+        padding: 0 0.5rem;
+    }
+}
+
+textarea {
+    resize: none;
+}
