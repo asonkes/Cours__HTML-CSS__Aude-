@@ -110,6 +110,7 @@ main {
 
             &.active {
               display: block;
+              list-style: none;
             }
 
             li {
