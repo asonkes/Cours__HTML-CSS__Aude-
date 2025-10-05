@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Formulaires</title>
+
+    <link rel="stylesheet" href="./global.css">
+</head>
+<body>
+    <h1>Demo Formulaire</h1>
+    <main>
+        <form method="post" action="javascript:void(0)">
+            <!-- Method get : Les données sont envoyées via l'url 
+             inconvénients : nombreux 
+             - 255 caractères max
+             - Tout ce qui se trouve dans l'url est visible et interceptable (sécurité un peu douteuse quand même)
+             -->
+            <!-- Method post :  un objet js est créé avec comme propriété le nom du champs et la valeur associée (plus sécurisé)
+             ex : { lastname : "Beurive", password : "SalutLesFilles" }
+             Il faudra du JS pour l'utiliser             
+             -->
+            <!-- Action : surtout utilisé en php : on y met le script qui doit traiter notre formulaire
+             Si on écrit javascript:void(0) dedans, cela permet de désactiver l'action -->
+            <!-- enctype : type d'encryption des données
+              Par défaut : text/plain (pour envoyer du json, des objets javascript) 
+              On remplacera par multipart/form-data si on voit envoyer des fichiers -->
+            
+            <!-- input type text -->
+            <div>
+                <label for="lastname">Nom</label>
+
+                <input autofocus id="lastname" name="lastname" placeholder="ex:Dupont" type="text" minlength="3" required>
+            </div>
+
+            <div>
+                <label for="firstname">Prénom</label>
+
+                <input id="firstname" name="firstname" placeholder="Prénom" type="text">
+            </div>
+
+            <!-- input type number -->
+            <div>
+                <label for="favNumber">Nombre préféré :</label>
+
+                <input id="favNumber" name="favNumber" placeholder="Nombre préféré" min="0" max="9" type="number">
+            </div>
+
+            <!-- input type email -->
+             <div>
+                <label for="email">Email :</label>
+
+                <input id="email" name="email" placeholder="Email" type="email" required>
+             </div>
+
+             <!-- input type password  -->
+            <div>
+                <label for="password">Mot de passe</label>
+
+                <input id="password" name="password" placeholder="Mot de passe" type="password">
+            </div>
+
+            <!-- input type tel : sur mobile, ouvre le pavé numérique -->
+            <div>
+                <label for="tel">Téléphone</label>
+
+                <input id="tel" name="tel" placeholder="Numéro de téléphone" type="tel">
+            </div>
+
+            <!-- input type file (on l'utilisera en React + API puisqu'il faut un back pour récupérer le fichier )-->
+            <div>
+                <label for="avatar">Votre avatar :</label>
+                
+                <input id="avatar" name="avatar" type="file" multiple accept="image/png">
+            </div>
+
+            <!-- input type date  -->
+             <div>
+                <label for="birthdate">Date de naissance :</label>
+
+                <input min="2025-09-30" id="birthdate" name="birthdate" type="date">
+             </div>
+            
+            <!-- input type checkbox -->
+             <div>
+                <input id="conditions" name="conditions" type="checkbox">
+                <label for="conditions">J'accepte les conditions de vente</label>
+             </div>
+
+             <div>
+                <input id="newsletter" name="newsletter" type="checkbox" checked>
+                <!-- Attention en UE (et quelques pays autres) il est interdit de cocher des cases pour l'utilisateur -->
+                <label for="newsletter">Oui, je souhaite m'abonner à la newsletter</label>
+             </div>
+
+            <!-- input type radio -->
+             <!-- Vos input radio doivent tous partager le même name
+              ET avoir tous une value différente (c'est cette valeur que votre formulaire enverra pour ce nom de champs) -->
+             <div>
+                <p>Quel est votre genre ?</p>
+
+                <input id="male" name="gender" value="h" type="radio">
+                <label for="male">Homme</label>
+
+                <input id="female" name="gender" value="f" type="radio">
+                <label for="female">Femme</label>
+
+                <input id="other" name="gender" value="o" type="radio">
+                <label for="other">Autre</label>
+                 
+             </div>
+
+            <!-- textarea -->
+            <div>
+                <label for="com">Votre commentaire</label>
+
+                <textarea spellcheck="true" rows="3" cols="50" name="comment" id="com">On apprendra en CSS à désactiver le redimensionnement</textarea>
+            </div>
+
+            <!-- select -->
+            <div>
+                <label for="techno">Quelle techno préférez-vous ?</label>
+
+                <select name="techno" id="techno">
+                    <!-- On laisse souvent un vide pour faire comme un placeholder -->
+                    <!-- hidden sert à cacher une option dans la liste déroulante -->
+                    <option selected hidden value="">Choisissez une techno</option>
+
+                    <!-- On les utilise plus rarement mais vous pouvez ranger vos options dans des catégories (qui elles ne sont pas selectionnables) -->
+                    <optgroup label="Front-End">
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="js">JS</option>
+                    </optgroup>
+
+                    <option value="nodejs">NodeJS</option>
+                    <option value="sql">SQL</option>
+                    <option value="figma">Figma</option>
+                </select>
+            </div>
+
+            <!-- Les boutons -->
+            <!-- On peut gérer les boutons de notre formulaire soit avec des input -->
+             <p>inputs</p>
+
+            <input type="submit" value="Envoyer">
+            <input type="reset" value="Effacer">
+            <input disabled type="button" value="Faire un truc">
+
+            <!-- Soit avec des buttons -->
+             <p>ou buttons</p>
+
+             <!-- Un button dans une balise form est d'office submit -->
+            <button>Envoyer</button>
+            <button type="reset">Effacer</button>
+            <button disabled type="button">Faire un truc</button>
+
+
+            <div class="demo-label-flottant">
+                <label for="ln">Nom</label>
+                <input placeholder="" id="ln" type="text">
+            </div>
+
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </form>
+
+        
+    </main>
+</body>
+</html>

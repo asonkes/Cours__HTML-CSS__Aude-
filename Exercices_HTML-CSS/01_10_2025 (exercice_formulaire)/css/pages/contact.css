@@ -1,0 +1,285 @@
+<<<<<<< HEAD
+=======
+/* CSS de la partie contact */
+main {
+  max-width: var(--widthFull);
+  padding-top: 84px;
+
+  h1 {
+    max-width: 90%;
+    margin: auto;
+    font-family: var(--primary-font);
+    text-align: center;
+    padding: 50px 20px;
+    filter: invert(0) brightness(2);
+    color: var(--primary-color);
+  }
+
+  form {
+    max-width: 90%;
+    margin: auto;
+    display: flex;
+    position: relative;
+    font-family: var(--primary-font);
+    border: 2px solid fuchsia;
+    box-shadow: rgba(255, 0, 255, 0.35) 0px 5px 15px;
+
+    @media (max-width: 1024px) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .block__infosParent {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      border-right: 2px solid fuchsia;
+
+      @media (max-width: 1024px) {
+        width: 100%;
+      }
+
+      .block__infos--radio {
+        width: 95%;
+        display: flex;
+        justify-content: space-between;
+        padding: 8px;
+        margin: 10px 0;
+        filter: invert(0) brightness(4);
+        color: var(--primary-color);
+
+        legend {
+          padding: 0 5px;
+        }
+      }
+
+      .block__infos--select {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        padding: 8px;
+        margin: 10px 0;
+        filter: invert(0) brightness(4);
+        color: var(--primary-color);
+
+        @media (max-width: 550px) {
+          width: 100%;
+        }
+
+        .selectParent {
+          max-width: 100%;
+          margin: 10px;
+
+          .selectParent__title {
+            width: 100%;
+            position: relative;
+            display: inline-flex;
+            justify-content: space-between;
+            padding: 5px 10px;
+            cursor: pointer;
+            border: 2px solid white;
+
+            .iconDown {
+              height: 100%;
+              opacity: 1;
+
+              &.active {
+                height: 0;
+                opacity: 0;
+              }
+            }
+
+            .iconUp {
+              position: absolute;
+              height: 0;
+              top: 0;
+              right: 10px;
+              display: flex;
+              align-items: center;
+              opacity: 0;
+
+              &.active {
+                height: 100%;
+                opacity: 1;
+              }
+            }
+          }
+
+          ul {
+            display: none;
+
+            &.active {
+              display: block;
+              list-style: none;
+            }
+
+            li {
+              border: 1px dotted fuchsia;
+              padding: 5px 10px;
+
+              &:hover {
+                background-color: rgba(255, 0, 255, 0.3);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .block__infos--checkbox {
+      width: 95%;
+      display: flex;
+      flex-direction: column;
+      padding: 8px;
+      margin: 10px 0;
+      filter: invert(0) brightness(4);
+      color: var(--primary-color);
+
+      legend {
+        padding: 0 5px;
+      }
+
+      .checkbox {
+        width: 100%;
+        padding: 8px;
+      }
+    }
+
+    .block__infos {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 8px;
+      margin: 10px 0;
+
+      @media (max-width: 550px) {
+        width: 100%;
+      }
+
+      .border {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 8px;
+        border: 2px solid transparent;
+
+        &:hover {
+          border: 2px dotted fuchsia;
+        }
+
+        label {
+          max-width: fit-content;
+          font-family: var(--primary-font);
+          filter: invert(0) brightness(4);
+          color: var(--primary-color);
+          margin: -15px 20px;
+          padding: 0 5px;
+          background-color: black;
+          border: 4px solid transparent;
+
+          &::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+
+        input {
+          width: 100%;
+          padding: 15px;
+          background-color: transparent;
+          border: 2px solid white;
+          color: var(--primary-color);
+        }
+
+        .errorSpan {
+          width: 100%;
+          padding: 5px;
+        }
+      }
+
+      .radio {
+        width: fit-content;
+      }
+    }
+  }
+
+  .textarea {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    background-image: url("../../images/background/background__contact.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @media (max-width: 1024px) {
+      width: 100%;
+    }
+
+    label {
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px 0;
+      filter: invert(0) brightness(4);
+      color: white;
+
+      @media (max-width: 1024px) {
+        text-align: center;
+      }
+    }
+
+    textarea {
+      resize: none;
+      padding: 20px;
+
+      @media (max-width: 1024px) {
+        width: 80%;
+        margin: auto;
+      }
+    }
+
+    .textareaError {
+      width: 80%;
+      padding: 5px;
+      margin: 0 auto;
+      filter: invert(0) brightness(4);
+      color: var(--primary-color);
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+
+  .button {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+
+    button {
+      width: 200px;
+      padding: 15px;
+      background-color: black;
+      border: 2px dotted fuchsia;
+      font-family: var(--primary-font);
+      font-size: 20px;
+      color: white;
+      filter: invert(0) brightness(4);
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba(255, 0, 255, 0.3);
+      }
+    }
+  }
+}
+>>>>>>> 51675d95bb4521a927cbcb7ed1c96d4c7042762d
