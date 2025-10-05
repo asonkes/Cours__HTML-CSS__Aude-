@@ -209,3 +209,89 @@ form.addEventListener("submit", (event) => {
     form.submit();
     }
 })
+
+/********************************/
+/** Ici light pour page Contact */
+/********************************/
+const body = document.querySelector("body");
+
+const radio = document.querySelector(".block__infos--radio");
+const radioLegend = document.querySelector(".block__infos--radio legend");
+
+const label = document.querySelectorAll(".block__infos .border label");
+const input = document.querySelectorAll(".block__infos .border input");
+
+const selectInput = document.querySelector(".block__infos--select");
+
+const checkBox = document.querySelector(".block__infos--checkbox");
+const checkBoxLegend = document.querySelector(".block__infos--checkbox legend");
+
+const button = document.querySelector("button");
+
+/* Quand on est en mode clair */
+sun.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    /** Pour le body */
+    body.classList.add("light");
+
+    /** Pour la partie radio */
+    radio.classList.add("light");
+    radioLegend.classList.add("light");
+
+    /* Pour tous kles input classiques */
+    input.forEach(element => {
+        element.classList.add("light");
+    })
+
+    /* Pour tous les labels classiques */
+    label.forEach(element => {
+        element.classList.add("light");
+    })
+
+    /* Pour le select */
+    selectInput.classList.add("light");
+
+    /* Pour la checkBox */
+    checkBox.classList.add("light");
+
+    /* Pour la checkBox legend */
+    checkBoxLegend.classList.add("light");
+
+    /* Pour le bouton */
+    button.classList.add("light");
+})
+
+
+moon.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    /** Pour le body */
+    body.classList.remove("light");
+
+    /** Pour la partie radio */
+    radio.classList.remove("light");
+    radioLegend.classList.remove("light");
+
+    /* Pour tous kles input classiques */
+    input.forEach(element => {
+        element.classList.remove("light");
+    })
+
+    /* Pour tous les labels classiques */
+    label.forEach(element => {
+        element.classList.remove("light");
+    })
+
+    /* Pour le select */
+    selectInput.classList.remove("light");
+
+    /* Pour la checkBox */
+    checkBox.classList.remove("light");
+
+    /* Pour la checkBox legend */
+    checkBoxLegend.classList.remove("light");
+
+    /* Pour le bouton */
+    button.classList.remove("light");
+})

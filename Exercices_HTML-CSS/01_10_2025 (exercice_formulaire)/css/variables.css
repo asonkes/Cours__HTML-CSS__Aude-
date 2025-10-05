@@ -15,8 +15,8 @@
   --fontSize-regular: 1.375rem;
   --fontSize-medium: 1.563rempx;
   --fontSize-large: 1.75rem;
-  --fontSize-xl: 1.875rem; 
-  --fontSize-xxl: 2.188rem; 
+  --fontSize-xl: 1.875rem;
+  --fontSize-xxl: 2.188rem;
 
   /* Les paddging */
   --padding-xsmall: 0.313rem;
@@ -35,6 +35,7 @@
   --width50: 50%;
   --width58: 58%;
   --width75: 75%;
+  --width80: 80%;
   --width90: 90%;
   --widthFull: 100%;
 
